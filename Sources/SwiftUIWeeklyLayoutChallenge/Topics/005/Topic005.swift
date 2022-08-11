@@ -12,8 +12,9 @@ struct Topic005View: View {
                     VStack {
                         Text("#SwiftUIレイアウト一本勝負")
                             .raibowGradient()
-                            .font(.title2.weight(.heavy))
+                            .font(.title3.monospaced().weight(.heavy))
                         Text("主なテーマ")
+                            .font(.callout.bold())
                     }.frame(maxWidth: .infinity, alignment: .center)
                 }
             }.padding()
@@ -28,7 +29,7 @@ private struct Topic005ContentView: View {
         GroupBox {
             VStack(alignment: .leading) {
                 Text(String(format: "%03d", content.id))
-                    .font(.title3.bold())
+                    .font(.subheadline.bold())
                 ForEach(content.contents, content: \.view)
             }
         }
@@ -57,7 +58,7 @@ extension Topic005Content.Content {
             Text("・")
             Text(value)
         }
-        .font(.title3)
+        .font(.subheadline.monospaced())
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
